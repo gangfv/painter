@@ -70,6 +70,18 @@ footer a {
 }
 
 @media (max-width: 600px) {
+    footer {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+    }
+    footer a {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
     .container-f * {
         font-size: 14px;
     }
