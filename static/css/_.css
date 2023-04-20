@@ -425,3 +425,28 @@ p {
     font-size: 32px;
     font-weight: bold;
 }
+
+.image-box img {
+    max-width: 432px;
+    margin-left: 50px;
+}
+
+.block-info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    max-width: 1200px;
+    align-items: flex-start;
+}
+
+.block-info .pt p {
+    text-align: start;
+}
+
+.block-info .pt {
+    margin-top: 100px;
+}
+
+.block-info .pt h1 {
+    text-align: start;
+}
