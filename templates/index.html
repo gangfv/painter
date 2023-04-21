@@ -10,8 +10,8 @@
     <div class="outer">
         <div class="middle">
             <div class="inner">
-                <h1>«Акварельные пейзажи»</h1>
-                <button class="btn" type="button">Хочу рисовать!</button>
+                <h1>Школа рисования «Замалевич»</h1>
+                <a class="btn" href="#form" type="button">Хочу рисовать!</a>
             </div>
         </div>
     </div>
@@ -30,7 +30,6 @@
             </p>
             <p><br></p>
             <p>
-                Этот курс – не просто мастер-класс, как нарисовать тот или иной сюжет.
                 Поговорим, как проявлять красоту минимумом средств: красивые пятна заливки акварелью и графическая
                 выразительность форм.
             </p>
@@ -42,7 +41,7 @@
                 Потренируем руку в выполнении изящных веток деревьев. Создадим сложные пейзажи с деревьями в инее или
                 покрытыми снегом. А также прочувствуем эмоции воды.
             </p>
-            <button class="btn mbt" type="button">Записаться на курс!</button>
+            <a class="btn mbt" href="#form" type="button">Записаться на курс!</a>
         </div>
     </div>
     </div>
@@ -50,111 +49,41 @@
 <section class="my-container-card">
     <h1 class="prew-card">Программа курса</h1>
     <div class="df-card">
+        {% for i in Lessons %}
         <div class="card">
-            <img src="https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/3e60700e2ce815c69dd7e18e7163ac21.jpg/s/500x/a/42224/sc/142">
+            <img src="{{ i.img.url }}">
             <div class="card-row">
-                <div class="text">Урок 1</div>
-                <div class="desc">"Приветствие. Знакомство с материалами. Узнаем о материалах. Закрепим на практике".
-                </div>
+                <div class="text">Урок {{ i.number_lesson }}</div>
+                <div class="desc">{{ i.desc }}</div>
             </div>
         </div>
-        <div class="card">
-            <img src="https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/3e60700e2ce815c69dd7e18e7163ac21.jpg/s/500x/a/42224/sc/142">
-            <div class="card-row">
-                <div class="text">Урок 1</div>
-                <div class="desc">"Приветствие. Знакомство с материалами. Узнаем о материалах. Закрепим на практике".
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/3e60700e2ce815c69dd7e18e7163ac21.jpg/s/500x/a/42224/sc/142">
-            <div class="card-row">
-                <div class="text">Урок 1</div>
-                <div class="desc">"Приветствие. Знакомство с материалами. Узнаем о материалах. Закрепим на практике".
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/3e60700e2ce815c69dd7e18e7163ac21.jpg/s/500x/a/42224/sc/142">
-            <div class="card-row">
-                <div class="text">Урок 1</div>
-                <div class="desc">"Приветствие. Знакомство с материалами. Узнаем о материалах. Закрепим на практике".
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/3e60700e2ce815c69dd7e18e7163ac21.jpg/s/500x/a/42224/sc/142">
-            <div class="card-row">
-                <div class="text">Урок 1</div>
-                <div class="desc">"Приветствие. Знакомство с материалами. Узнаем о материалах. Закрепим на практике".
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/3e60700e2ce815c69dd7e18e7163ac21.jpg/s/500x/a/42224/sc/142">
-            <div class="card-row">
-                <div class="text">Урок 1</div>
-                <div class="desc">"Приветствие. Знакомство с материалами. Узнаем о материалах. Закрепим на практике".
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/3e60700e2ce815c69dd7e18e7163ac21.jpg/s/500x/a/42224/sc/142">
-            <div class="card-row">
-                <div class="text">Урок 1</div>
-                <div class="desc">"Приветствие. Знакомство с материалами. Узнаем о материалах. Закрепим на практике".
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/3e60700e2ce815c69dd7e18e7163ac21.jpg/s/500x/a/42224/sc/142">
-            <div class="card-row">
-                <div class="text">Урок 1</div>
-                <div class="desc">"Приветствие. Знакомство с материалами. Узнаем о материалах. Закрепим на практике".
-                </div>
-            </div>
-        </div>
-        <button class="btn mbt" type="button">Хочу на курс!</button>
+        {% endfor %}
     </div>
+    <a class="btn mbt-auto" href="#form" type="button">Хочу на курс!</a>
 </section>
 <section class="block-wrapper">
     <div class="my-container block-info">
         <div class="pt">
             <p><br></p>
-            <h1>Организатор курса</h1>
+            <h1>«Школа рисования Замалевич»</h1>
             <p>
-                Международная Академия Креатива образовалась в 2020 году при самой крупной школе правополушарного
-                рисования — Онлайн-школе рисования Максима Манькова.
+                Здесь вы сможете узнавать актуальную информацию о курсах и занятиях, проходящих в школе рисования
+                «Замалевич».
             </p>
             <p><br></p>
             <p>
-                В Академии рисуют художники из России, Индии, Бразилии и Италии.
+                А также найти полезную и интересную информацию по темам: творчество, педагогика, воспитание, обучение,
+                психология и др.
             </p>
-
         </div>
-        <div id="builder884006" class="builder  flex-column col-md-5 col-md-offset-0" data-path="column2">
-            <div class="common-setting-link box-setting-link" data-icon-class="fa fa-adjust"
-                 data-param="column2/box" data-title="Стиль блока" data-setting-editable="true"></div>
-
-            <div data-param="column2/parts/image1" data-item-name="image1" data-title="Элемент"
-                 data-animation-mode="no" style="margin-bottom: 25px; border-radius: ; "
-                 data-setting-editable="true" class="builder-item part-image  text-center">
-
-                <div id="image5408488" class="image-box" data-img-title=""
-                     data-img-src="//fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/68507f29338a2d54a9acd8d87c2ee907.jpg/s/s1200x/a/42224/sc/165">
-                    <img class=" lazyloaded"
-                         data-src="//fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/68507f29338a2d54a9acd8d87c2ee907.jpg/s/s1200x/a/42224/sc/165"
-                         data-param="column2/parts/image1/inner/image"
-                         data-hash="68507f29338a2d54a9acd8d87c2ee907.jpg" data-image-editable="true" title="" alt=""
-                         style="border-radius: 9px !important; "
-                         src="//fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/68507f29338a2d54a9acd8d87c2ee907.jpg/s/s1200x/a/42224/sc/165">
-                    <div data-editable="true" data-param="column2/parts/image1/inner/image/caption"
-                         class="lt-image-caption">
-                    </div>
-                </div>
-
+        <div class="builder flex-column col-md-5 col-md-offset-0" data-path="column2">
+            <div class="image-box">
+                <img class="lazyloaded" src="{% static 'img/prom.jpg' %}"
+                     style="border-radius: 9px!important; margin-bottom: 25px;">
+                <div data-editable="true" class="lt-image-caption"></div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 <section>
@@ -165,22 +94,20 @@
                 <div class="inner">
                     <div class="row">
                         <div class="index">
-                            <div class="text">Варианты участия</div>
-                            <div class="block-set">СТАНДАРТ</div>
-                            <div>Доступ на 3 месяца</div>
-                            <div class="block-set">VIP-УЧАСТИЕ</div>
-                            <div>Доступ на 365 дней</div>
+                            <div class="text">Школа рисования<br>«Замалевич»</div>
+                            <div class="block-set">Для детей от 3 до 17 лет</div>
+                            <div class="block-set">Маленькие группы</div>
                             <div>Остались вопросы?</div>
                             <div>Напишите нам: help@mankov.online</div>
                         </div>
-                        <form action="" class="form">
-                            <h1>Запись на курс</h1>
-                            <input class="input" type="text" placeholder="Введите ваш эл. адрес">
-                            <input class="input" type="text" placeholder="Введите ваше имя">
-                            <input class="input" type="text" placeholder="Введите ваш телефон">
+                        <form id="form" action="" class="form">
+                            <h1>Запись</h1>
+                            <input class="input" name="email" type="text" placeholder="Введите ваш эл. адрес" required>
+                            <input class="input" name="name" type="text" placeholder="Введите ваше имя" required>
+                            <input class="input" name="number" type="text" placeholder="Введите ваш телефон" required>
                             <button class="btn" type="submit">Отправить</button>
                             <div>
-                                <input class="global-confirm-checkbox" type="checkbox" checked="">
+                                <input class="global-confirm-checkbox" type="checkbox" required>
                                 <span class="checkbox-text">Я согласен на обработку моих персональных данных в соответствии с <a>Условиями</a></span>
                             </div>
                         </form>
