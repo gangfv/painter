@@ -1,18 +1,5 @@
 version: "3"
 services:
-  nginx:
-    build: ./nginx
-    container_name: nginx_temp
-    links:
-      - web
-    depends_on:
-      - web
-    volumes:
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
-    ports:
-      - "80:80"
-      - "443:443"
   #  postgresql:
   #    image: postgres:12.0
   #    container_name: postgresql
@@ -22,8 +9,8 @@ services:
   #      - POSTGRES_DB=postgres
   #    ports:
   #      - "5432:5432"
-  web:
-    container_name: web_temp
+  painter:
+    container_name: painter
     build: .
     command: >
       sh -c "python manage.py collectstatic --noinput &&
@@ -33,6 +20,17 @@ services:
     volumes:
       - static_volume:/app/staticfiles
       - media_volume:/app/media
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.painter.rule=Host(`painter.kulpinov.site`)"
+      - "traefik.http.services.painter.loadbalancer.server.port=7979"
+
 volumes:
   media_volume:
   static_volume:
+networks:
+  web:
+    external: true
